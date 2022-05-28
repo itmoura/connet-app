@@ -1,0 +1,16 @@
+server:
+  servlet:
+    context-path: /connet-app
+spring:
+  application:
+    name: connet-app
+api:
+  urlServer: 'http://localhost:8080/connet-app'
+  name: 'API: @project.name@'
+  description: '@project.description@'
+  version: '@project.version@'
+  client:
+    host: 'https://connet-client-engine.herokuapp.com'
+    v1:
+      basePath: '/connet-client-engine/api/client/v1'
+      clients: '/clients'
