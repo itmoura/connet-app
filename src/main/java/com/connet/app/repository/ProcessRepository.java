@@ -10,4 +10,6 @@ import java.util.UUID;
 public interface ProcessRepository extends JpaRepository<Process, UUID> {
 
     List<Process> findALLByInstallerId(Long installerId);
+
+    List<Process> findByClientId(UUID clientId);
 }

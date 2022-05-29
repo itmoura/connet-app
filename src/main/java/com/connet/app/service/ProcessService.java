@@ -72,4 +72,8 @@ public class ProcessService {
         process.setRating(rating);
         return ProcessDTO.convert(processRepository.save(process));
     }
+
+    public List<ProcessDTO> getClientProcess(UUID clientId) {
+        return processRepository.findByClientId(clientId).stream().map(ProcessDTO::convert).collect(java.util.stream.Collectors.toList());
+    }
 }

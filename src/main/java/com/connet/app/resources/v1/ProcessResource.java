@@ -43,4 +43,9 @@ public class ProcessResource {
         return ResponseEntity.ok(processService.getProcess(processId));
     }
 
+    @GetMapping("/client/{client_id}")
+    public ResponseEntity<List<ProcessDTO>> getClientProcess(@PathVariable("client_id") UUID clientId) {
+        return ResponseEntity.ok(processService.getClientProcess(clientId));
+    }
+
 }
