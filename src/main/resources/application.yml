@@ -34,6 +34,10 @@ api:
     v1:
       basePath: '/connet-installer-engine/api/installer/v1'
       installers: '/installers'
+default:
+  cors:
+    allowed:
+      origin: http://localhost:8080,http://localhost:8081,https://connet-app.herokuapp.com
 #  client:
 #    host: 'http://localhost:8090'
 #    v1:
