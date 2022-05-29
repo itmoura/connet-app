@@ -28,4 +28,8 @@ public class InstallerService {
     public InstallerDTO login(Long id, String password) {
         return installerIntegration.login(id, password);
     }
+
+    public UUID update(UUID id, InstallerDTO installerDTO) {
+        return installerIntegration.updateInstaller(id, installerDTO);
+    }
 }

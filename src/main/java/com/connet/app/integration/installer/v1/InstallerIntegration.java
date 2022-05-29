@@ -3,10 +3,7 @@ package com.connet.app.integration.installer.v1;
 import com.connet.app.integration.installer.v1.dto.InstallerDTO;
 import org.hibernate.cfg.beanvalidation.IntegrationException;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
@@ -23,5 +20,8 @@ public interface InstallerIntegration {
 
     @PostMapping(value = "${api.installer.v1.installers}/login", produces = APPLICATION_JSON_UTF8_VALUE)
     InstallerDTO login(@RequestParam Long id, @RequestParam String password) throws IntegrationException;
+
+    @PutMapping(value = "${api.installer.v1.installers}/{id}", produces = APPLICATION_JSON_UTF8_VALUE)
+    UUID updateInstaller(@PathVariable("id") UUID id, @RequestBody InstallerDTO installer) throws IntegrationException;
 
 }

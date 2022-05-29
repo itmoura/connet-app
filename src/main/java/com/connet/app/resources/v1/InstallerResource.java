@@ -36,4 +36,9 @@ public class InstallerResource {
         return ResponseEntity.ok(installerService.login(id, password));
     }
 
+    @PutMapping(value = "/{id}", produces = APPLICATION_JSON_UTF8_VALUE)
+    public ResponseEntity<UUID> updateInstaller(@PathVariable("id") UUID id, @RequestBody InstallerDTO installerDTO) {
+        return ResponseEntity.ok(installerService.update(id, installerDTO));
+    }
+
 }
