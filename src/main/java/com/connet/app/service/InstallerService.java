@@ -5,6 +5,7 @@ import com.connet.app.integration.installer.v1.InstallerIntegration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -35,5 +36,9 @@ public class InstallerService {
 
     public InstallerDTO getInstallerExtern(Long id) {
         return installerIntegration.getInstallerExtern(id);
+    }
+
+    public List<InstallerDTO> getFullInstaller() {
+        return installerIntegration.getFullInstaller();
     }
 }

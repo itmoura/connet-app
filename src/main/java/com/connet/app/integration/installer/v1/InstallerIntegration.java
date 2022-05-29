@@ -5,6 +5,7 @@ import org.hibernate.cfg.beanvalidation.IntegrationException;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
@@ -17,6 +18,9 @@ public interface InstallerIntegration {
 
     @GetMapping(value = "${api.installer.v1.installers}/extern/{id}", produces = APPLICATION_JSON_UTF8_VALUE)
     InstallerDTO getInstallerExtern(@PathVariable("id") Long id) throws IntegrationException;
+
+    @GetMapping(value = "${api.installer.v1.installers}", produces = APPLICATION_JSON_UTF8_VALUE)
+    List<InstallerDTO> getFullInstaller() throws IntegrationException;
 
     @GetMapping(value = "${api.installer.v1.installers}/intern/{id}", produces = APPLICATION_JSON_UTF8_VALUE)
     InstallerDTO getIdInstallerIntern(@PathVariable("id") Long id) throws IntegrationException;
