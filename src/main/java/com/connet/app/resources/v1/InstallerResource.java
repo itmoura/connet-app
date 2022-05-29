@@ -22,8 +22,13 @@ public class InstallerResource {
     }
 
     @GetMapping(value = "/{id}", produces = APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<InstallerDTO> getClient(@PathVariable("id") UUID id) {
+    public ResponseEntity<InstallerDTO> getInstaller(@PathVariable("id") UUID id) {
         return ResponseEntity.ok(installerService.getInstaller(id));
+    }
+
+    @GetMapping(value = "/extern/{id}", produces = APPLICATION_JSON_UTF8_VALUE)
+    public ResponseEntity<InstallerDTO> getInstallerExtern(@PathVariable("id") Long id) {
+        return ResponseEntity.ok(installerService.getInstallerExtern(id));
     }
 
     @PostMapping(produces = APPLICATION_JSON_UTF8_VALUE)

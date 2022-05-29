@@ -9,6 +9,16 @@ spring:
     username: qzuoqmgddehrwm
     password: c0f1be548839a1d0beccf7ea8b805a625ae6b93a6952a3f4b689388fff7de859
     driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        temp.use_jdbc_metadata_defaults: false
+        format_sql: true
+    show-sql: true
+    generate-ddl: true
 api:
   urlServer: 'http://localhost:8080/connet-app'
   name: 'API: @project.name@'

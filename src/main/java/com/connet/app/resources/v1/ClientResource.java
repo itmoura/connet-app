@@ -37,12 +37,12 @@ public class ClientResource {
     }
 
     @DeleteMapping(value = "/{id}", produces = APPLICATION_JSON_UTF8_VALUE)
-    public void deleteCampaign(@PathVariable("id") UUID id) {
+    public void deleteClient(@PathVariable("id") UUID id) {
         clientService.deleteClient(id);
     }
 
     @PutMapping(value = "/{id}", produces = APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<UUID> updateCampaign(@PathVariable("id") UUID clientId, @RequestBody ClientDTO clientDTO) {
+    public ResponseEntity<UUID> updateClient(@PathVariable("id") UUID clientId, @RequestBody ClientDTO clientDTO) {
         return ResponseEntity.ok(clientService.updateClient(clientId, clientDTO));
     }
 

@@ -32,4 +32,8 @@ public class InstallerService {
     public UUID update(UUID id, InstallerDTO installerDTO) {
         return installerIntegration.updateInstaller(id, installerDTO);
     }
+
+    public InstallerDTO getInstallerExtern(Long id) {
+        return installerIntegration.getInstallerExtern(id);
+    }
 }

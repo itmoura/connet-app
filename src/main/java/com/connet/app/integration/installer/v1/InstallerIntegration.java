@@ -15,6 +15,12 @@ public interface InstallerIntegration {
     @GetMapping(value = "${api.installer.v1.installers}/{id}", produces = APPLICATION_JSON_UTF8_VALUE)
     InstallerDTO getInstaller(@PathVariable("id") UUID id) throws IntegrationException;
 
+    @GetMapping(value = "${api.installer.v1.installers}/extern/{id}", produces = APPLICATION_JSON_UTF8_VALUE)
+    InstallerDTO getInstallerExtern(@PathVariable("id") Long id) throws IntegrationException;
+
+    @GetMapping(value = "${api.installer.v1.installers}/intern/{id}", produces = APPLICATION_JSON_UTF8_VALUE)
+    InstallerDTO getIdInstallerIntern(@PathVariable("id") Long id) throws IntegrationException;
+
     @PostMapping(value = "${api.installer.v1.installers}", produces = APPLICATION_JSON_UTF8_VALUE)
     String createInstaller(@RequestParam Long id) throws IntegrationException;
 
@@ -23,5 +29,4 @@ public interface InstallerIntegration {
 
     @PutMapping(value = "${api.installer.v1.installers}/{id}", produces = APPLICATION_JSON_UTF8_VALUE)
     UUID updateInstaller(@PathVariable("id") UUID id, @RequestBody InstallerDTO installer) throws IntegrationException;
-
 }

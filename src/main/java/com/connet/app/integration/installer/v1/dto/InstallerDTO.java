@@ -25,7 +25,7 @@ public class InstallerDTO implements Serializable {
     private String name;
 
     @JsonProperty("rating")
-    private Integer rating;
+    private Float rating;
 
     @JsonProperty("price_per_km")
     private Integer pricePerKm;
@@ -41,4 +41,7 @@ public class InstallerDTO implements Serializable {
 
     @JsonProperty("phone")
     private String phone;
+
+    @JsonProperty("qtd")
+    private Integer qtd;
 }
