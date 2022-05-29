@@ -39,6 +39,9 @@ public class ClientDTO implements Serializable {
     @JsonProperty("longitude")
     private Double longitude;
 
+    @JsonProperty("state")
+    private String state;
+
     @JsonProperty("plan_id")
     private Long planId;
 }
