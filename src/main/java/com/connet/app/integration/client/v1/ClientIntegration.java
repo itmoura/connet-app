@@ -16,7 +16,7 @@ public interface ClientIntegration {
     @PostMapping(value = "${api.client.v1.clients}", produces = APPLICATION_JSON_UTF8_VALUE)
     ResponseEntity<?> save(@RequestBody ClientDTO clientDTO) throws IntegrationException;
 
-    @PostMapping(value = "${api.client.v1.clients}", produces = APPLICATION_JSON_UTF8_VALUE)
+    @PostMapping(value = "${api.client.v1.clients}/login", produces = APPLICATION_JSON_UTF8_VALUE)
     ClientDTO login(@RequestParam String email, @RequestParam String password) throws IntegrationException;
 
     @GetMapping(value = "${api.client.v1.clients}/{id}", produces = APPLICATION_JSON_UTF8_VALUE)

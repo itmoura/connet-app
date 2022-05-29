@@ -2,6 +2,7 @@ package com.connet.app.service;
 
 import com.connet.app.integration.client.v1.ClientIntegration;
 import com.connet.app.integration.client.v1.dto.ClientDTO;
+import org.hibernate.cfg.beanvalidation.IntegrationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -22,7 +23,7 @@ public class ClientService {
         return clientIntegration.save(clientDTO);
     }
 
-    public ClientDTO getClient(UUID id) {
+    public ClientDTO getClient(UUID id) throws IntegrationException{
         return clientIntegration.getClient(id);
     }
 
